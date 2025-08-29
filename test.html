@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="historyContainer" style="border:1px solid #ccc; padding:10px; width:300px;">
+  <h3>History</h3>
+</div>
+
+<button id="addBtn">Add History Item</button>
+
+<script>
+  const container = document.getElementById('historyContainer');
+  const btn = document.getElementById('addBtn');
+  let count = 0; // counter for items
+
+  btn.addEventListener('click', () => {
+    count++; // increment item number
+    const p = document.createElement('p'); // create new p
+    p.innerText = `History Item ${count}`; // set text
+    container.appendChild(p); // add to div
+  });
+</script>
+</body>
+</html>
