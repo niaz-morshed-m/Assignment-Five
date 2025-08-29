@@ -1,5 +1,6 @@
 
 // heart button functionality
+
 const heartClass = document.getElementsByClassName('heart')
  let heartCount = document.getElementById("heart-count")
 
@@ -20,10 +21,11 @@ function getAlert (id, alert1, alert2, CallServiceName, callNum){
  
  document.getElementById(id)
    .addEventListener("click", function () {
-    
+
      let currentCoins = parseInt(coin.innerText);
      if (currentCoins < 20) {
        alert(alert1);
+       return
      } else {
        coin.innerText = currentCoins - 20;
        alert(alert2);
@@ -107,6 +109,21 @@ getAlert(
 );
 
 document.getElementById("clear-btn").addEventListener("click",function(){
-document.querySelectorAll(".history-parent").style.display = "none"
- 
+const rmv = document.getElementById("history-container")
+ rmv.innerHTML = ""
 })
+
+
+
+
+function copyNumber(btnId, serviceNumId, serviceName) {
+  document.getElementById(btnId).addEventListener("click", function () {
+    const serveName = serviceName
+    const text = document.getElementById(serviceNumId).innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copied: "+ serviceName + " Number " + text);
+    
+  });
+}
+
+copyNumber("btn-national", "national-copy", "National Emergency" )
