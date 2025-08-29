@@ -4,3 +4,8 @@
 .hind-madurai {
   font-family: "Hind Madurai", sans-serif;
 }
+
+.heart:hover {
+  background-image: url('./assets/heart.png');
+  background-size: cover;
+}

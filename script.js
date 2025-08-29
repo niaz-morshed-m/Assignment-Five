@@ -123,7 +123,28 @@ function copyNumber(btnId, serviceNumId, serviceName) {
     navigator.clipboard.writeText(text);
     alert("Copied: "+ serviceName + " Number " + text);
     
+    let CopyCount = document.getElementById("copy-count")
+    let CurrentCopyCount = parseInt(CopyCount.innerText)
+
+    CopyCount.innerText = CurrentCopyCount + 1
+    
   });
 }
 
-copyNumber("btn-national", "national-copy", "National Emergency" )
+copyNumber("btn-national", "national-copy", "National Emergency")
+
+copyNumber("btn-fire", "fire-copy","Fire Service")
+
+copyNumber("btn-police","police-copy","Police")
+
+copyNumber("btn-child","child-copy","Women and Child Helpline")
+
+copyNumber("btn-ambulence", "ambulence-copy", "Ambulence")
+
+copyNumber("btn-anti", "anti-copy", "Anti-Corruption Helpline")
+
+copyNumber("btn-electricity", "electricity-copy","Electricity Helpline")
+
+copyNumber("btn-brac", "brac-copy", "BRAC Helpline")
+
+copyNumber("btn-railway", "railway-copy", "BD Railway Helpline")
